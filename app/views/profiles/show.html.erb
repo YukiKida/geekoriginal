@@ -1,0 +1,13 @@
+    <% unless @profile.id == current_profile.id %>
+      <% if @isRoom == true %>
+        <p class="profile-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">チャットへ</a>
+      <% else %>
+        <%= form_for @room do |f| %>
+          <%= fields_for @entry do |e| %>
+            <%= e.hidden_field :profile_id, value: @profile.id %>
+          <% end %>
+          <%= f.submit "チャットを始める" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  

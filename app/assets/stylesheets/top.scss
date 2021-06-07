@@ -1,0 +1,165 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+header {
+  background-color: #fff;
+  width: 100%;
+  height: 80px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 5;
+}
+header a {
+  color: white; 
+  text-decoration: none; 
+}
+header h1 {
+  color: #517D99;
+  margin-left: 40px;
+  font-family: 'Delius', cursive;
+}
+.header-list {
+  display: flex;
+  align-items: center;
+}
+header ul {
+  display: flex;
+}
+header li {
+  list-style: none;
+  margin-right: 40px;
+  color: white;
+}
+.btn{
+  padding: 10px 40px;
+  border-radius: 35px;
+  transition: all 0.5s;
+}
+
+.btn--green{
+  background-color: #6AC1B7;
+  border: 1px solid #6AC1B7;
+}
+
+.btn--green:hover{
+  color: #6AC1B7;
+  background-color: #fff;
+  border: 1px solid #6AC1B7;
+}
+
+.btn--blue{
+  background-color: #517D99;
+  border: 1px solid #517D99;
+}
+.btn--blue:hover{
+  color: #517D99;
+  background-color: #fff;
+  border: 1px solid #517D99;
+}
+
+.top-image{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.top-image-circle{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 67% 33% 29% 71% / 58% 75% 25% 42% ;
+  top: 20%;
+  right: 25%;
+  background-color: #6AC1B7;
+}
+.top-text{
+  position: absolute;
+  width: 85%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+}
+.top-text-title{
+  padding: 30px;
+  font-size: 36px;
+}
+.top-text-desc{
+  padding: 30px;
+  font-size: 16px;
+  line-height: 2.5em;
+  text-align: left;
+}
+.step{
+  text-align: center;
+  width: 100%;
+}
+.step-title{
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
+  background-color: #6AC1B7;
+  font-size: 36px;
+  font-weight: 100;
+  margin-top: 75px;
+  padding: 10px;
+}
+.step-title:before{
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 2px solid #517D99;
+}
+.step-contents{
+  width: 100%;
+}
+.step-item{
+  width: 100%;
+  margin: 75px 0px;
+}
+.step-item--subtitle{
+  font-size: 32px;
+  font-weight: 100;
+  color: #517D99;
+}
+.step-item--box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 50px 50px 75px;
+}
+.step02{
+  padding: 100px 50px;
+}
+.step-item--description{
+  position: relative;
+  font-size: 24px;
+  text-align: left;
+  line-height: 3.0em;
+  letter-spacing: 3px;
+}
+// .step-item--description::before{
+//   position: absolute;
+//   content: "";
+//   top: 120px;
+//   left: -85px;
+//   transform: rotate(-60deg);
+//   height: 50px;
+//   width: 75px;
+//   border-top: 2px solid #517D99;
+// }
+.emphasis{
+  font-size: 44px;
+  background:linear-gradient(transparent 60%, #DFEFED 60%);
+}

@@ -1,0 +1,51 @@
+<div class="box signup">
+  <h2 class="title">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :name , class: 'label-title' %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" , class: 'input-form' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email , class: 'label-title' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: 'input-form' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :studyLanguage , class: 'label-title' %><br />
+      <%= f.select :studyLanguage, [ [ "Japanese", "Japanese"], ["Chinese", "Chinese"], ["English", "English"], ["Spanish", "Spanish"]] , {} ,  {class: 'select-form'} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nativeLanguage , class: 'label-title' %><br />
+      <%= f.select :nativeLanguage, [ [ "Japanese", "Japanese"], ["Chinese", "Chinese"], ["English", "English"], ["Spanish", "Spanish"]] , {} , {class: 'select-form'} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image , class: 'label-title' %><br />
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password , class: 'label-title' %>
+      <% if @minimum_password_length %>
+      <em class="label-title">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" , class: 'input-form' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation , class: 'label-title' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: 'input-form' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" , class: 'submit-btn' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

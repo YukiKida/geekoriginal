@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geekoriginal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'login', :media => 'all' %>
+  </head>
+
+  <body>
+    <main>  
+      <div class="login-content">
+        <div class="login-inner">
+          <h2 class="login-title">Login</h2>
+          <div class="login-input">
+            <input type="text" placeholder="e-mail">
+          </div>
+          <div class="login-input">
+            <input type="text" placeholder="password">
+          </div>
+          <div>
+            <input type="submit" value="ログイン" class="login-btn">
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

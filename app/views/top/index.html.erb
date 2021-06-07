@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geekoriginal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'top', :media => 'all' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Tandemy</h1>
+      <div class="header-list">
+        <ul>
+          <li>
+            <a class="btn btn--green" href="/users">ログイン</a>
+          </li>
+          <li>
+            <a class="btn btn--blue" href="/users/sign_up">新規登録</a>
+          </li>
+        </ul>
+      </div>  
+    </header>
+
+
+    <section class="top-image">
+      <div class="top-image-circle"></div>
+      <div class="top-text">
+        <h4 class="top-text-title">Break your language Barrier</h4>
+        <p class="top-text-desc">
+          Tandemyは学びたい言語と<br />
+          話せる言語との<br />
+          マッチングを行うサイトです
+        </p>
+      </div>
+    </section>
+
+    <section class="step">
+      <h2 class="step-title">学習の流れ</h2>
+
+      <div class="step-contents">
+        <div class="step-item">
+          <div class="step-item--box">
+            <div class="step-item--box--inner">
+              <%= image_tag 'step01.png' , :size => '273x400' %>
+            </div>
+            <div class="step-item--box--inner">
+              <h4>STEP.01</h4>
+              <h4>まずは登録しよう</h4>
+              <p class="step-item--description">
+                自分の<span class="emphasis">ユーザ名</span>・<br>
+                <span class="emphasis">学びたい言語</span>・<span class="emphasis">話したい言語</span>を<br>
+                登録しましょう
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-contents">
+        <div class="step-item">
+          <h4 class="step-item--circle">02</h4>
+          <h4 class="step-item--bar">|</h4>
+          <h4 class="step-item--subtitle">次はマッチングしよう</h4>
+          <div class="step-item--box step02">
+            <div class="step-item--box--inner">
+              <%= image_tag 'step02.png' , :size => '369x198' %>
+            </div>
+            <div class="step-item--box--inner">
+              <p class="step-item--description">
+                学びたい言語と話したい言語を<br>
+                <span class="emphasis">マッチング</span>します<br>
+                ユーザの一覧表から<span class="emphasis">気になる方</span>を<br>
+                選択しましょう
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-contents">
+        <div class="step-item">
+          <h4 class="step-item--circle">03</h4>
+          <h4 class="step-item--bar">|</h4>
+          <h4 class="step-item--subtitle">チャットで教え合おう</h4>
+          <div class="step-item--box">
+            <div class="step-item--box--inner">
+              <%= image_tag 'step03.png' , :size => '266x353' %>
+            </div>
+            <div class="step-item--box--inner">
+              <p class="step-item--description">
+                それぞれ学習していて<span class="emphasis">疑問</span>に思ったことを<br>
+                <span class="emphasis">その言語</span>で<span class="emphasis">質問</span>してみましょう<br>
+                お互いに教え合うことで学習の<br>
+                <span class="emphasis">モチベーション維持</span>にもつながります
+              </p> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+
+  </body>
+</html>

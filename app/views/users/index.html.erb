@@ -1,0 +1,37 @@
+<div id="users">
+
+  <h2 class="chart-title">ユーザ一覧</h2>
+  <% if user_signed_in? %>
+
+    <div class="my-page">
+      <h3>HELLO! <%= current_user.name %> さん</h3>
+      <p class="pt-20"><%= link_to "マイページを編集する", user_path(current_user.id) , class: 'btn' %></p>
+    </div>
+
+
+    <div>
+      <% @users.each do |u| %>
+      <table class="user-table">
+        <tr>
+          <th><%= u.name %>さん</th>
+          <th>学んでいる言語：<%= u.studyLanguage %></th>
+          <th>母国語：<%= u.nativeLanguage %></th>
+          <th><a href="/users/<%= u.id %>" class="btn">始める</a></th>
+        </tr>
+      </table>
+      <% end %>
+      <div class="logout">
+        <%= link_to "ログアウト", destroy_user_session_path, :method => :delete, class: "btn" %>
+      </div>
+    </div>
+
+
+  <% else %>
+    <div class="inner">
+      <%= link_to "ユーザーを登録する", new_user_registration_path , class: 'btn' %>
+    </div>
+    <div class="inner">
+      <%= link_to "ログインする", new_user_session_path , class:'btn' %>
+    </div>
+  <% end %>
+</div>

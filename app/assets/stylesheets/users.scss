@@ -1,0 +1,247 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* 共通部分 */
+a{
+  text-decoration: none;
+}
+.pt-20{
+  padding-top: 20px;
+}
+.mt-50{
+  margin-top: 50px;
+}
+.btn{
+  padding: 15px 50px;
+  border-radius: 25px;
+  background-color: #6AC1B7;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight: bold;
+  transition: all .5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover{
+  background-color: #fff;
+  color: #6AC1B7;
+  border: 1px solid #6AC1B7;
+}
+.field{
+  padding: 20px 0;
+}
+.box{
+  width: 100%;
+  text-align: center;
+  background-color: #6AC1B7;
+}
+.login{
+  height: calc(100vh - 140px);
+  padding-top: 100px;
+}
+.signup{
+  padding-top: 20px;
+}
+.title{
+  color: #DFEFED;
+  font-size: 40px;
+  padding: 20px 0;
+}
+.login-subtitle{
+  width: 500px;
+  margin: 0 auto;
+}
+.label-title{
+  text-align: left;
+  color: #DFEFED;
+  font-size: 24px;
+}
+.input-form{
+  font-size: 20px;
+	box-sizing: border-box;
+  width: 500px;
+	padding: 10px;
+  margin: 15px 0 10px;
+	letter-spacing: 1px;
+	border-bottom: 1px solid #DFEFED;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-radius: 0px;
+  outline: 0;
+  background-color: #6AC1B7;
+  color: #DFEFED;
+}
+.select-form{
+  width: 500px;
+  padding: 15px 10px;
+  margin: 15px 0;
+  outline: 0;
+  border: 3px solid #fff;
+  transition: all .5s;
+
+}
+.select-form:hover{
+  border: 3px solid #517d99;
+}
+.submit-btn{
+  padding: 15px 50px;
+  margin: 30px 0 20px;
+  border-radius: 25px;
+  background-color: #6AC1B7;
+  color: #fff;
+  border: 1px solid #fff;
+  font-weight: bold;
+  transition: all .5s;
+  cursor: pointer;
+}
+.submit-btn:hover{
+  background-color: #fff;
+  color: #6AC1B7;
+  border: 1px solid #fff;
+}
+.remember_me{
+  color: #DFEFED;
+  font-size: 20px;
+}
+
+/* ============================== 一覧表 ==============================*/
+#users{
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+.chart-title{
+  padding: 60px 0px 20px;
+  color: #517d99;
+  font-size: 28px;
+}
+.my-page{
+  padding: 30px 0;
+}
+.user-table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.user-table tr{
+  border-bottom: 1px solid #eee;
+}
+.user-table tr:hover{
+  background-color: #DFEFED;
+}
+.user-table th{
+  text-align: center;
+  width: 25%;
+  padding: 35px 0;
+}
+.new-chat{
+  padding: 50px 0;
+}
+.logout{
+  padding-top: 50px;
+}
+.inner{
+  padding: 30px 0;
+}
+
+
+/* ==============================詳細ページ======================================= */
+.detail-title,
+#edit .title{
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+  background-color: #517d99;
+  font-size: 32px;
+}
+.user-profile{
+  background: #517d99;
+  width: 300px;
+  margin: 50px auto;
+}
+.profile-image{
+  position: relative;
+}
+.profile-image .image{
+  width: 100%;
+}
+.profile-image:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  border-style: solid;
+  border-width: 35px 0 0 300px;
+  border-color: transparent transparent transparent #517d99;
+}
+.profile-name,
+.profile-studylanguage,
+.profile-nativelanguage,
+.profile-desc{
+  color: #fff;
+}
+.profile-name{
+  padding: .5rem 1.6rem .2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+}
+.profile-studylanguage,
+.profile-nativelanguage{
+  padding: 0 1.6rem 0;
+  font-size: .8rem;
+  letter-spacing: .1rem;
+  opacity: .7;
+}
+.profile-desc{
+  padding: 1.6rem;
+  line-height: 1.6rem;
+}
+.text-center{
+  text-align: center;
+}
+.chat{
+  width: 200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.return{
+  padding: 50px 0;
+}
+
+/* ============================== 編集ページ ==============================*/
+#edit{
+  text-align: center;
+}
+#edit .edit-label-title{
+  color: #517d99;
+  font-size: 24px;
+  padding: 10px;
+}
+.edit-form{
+  font-size: 20px;
+	box-sizing: border-box;
+  width: 500px;
+	padding: 10px;
+  margin: 15px 0 10px;
+	letter-spacing: 1px;
+	border-bottom: 1px solid #DFEFED;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-radius: 20px;
+  outline: 0;
+  background-color: #DFEFED;
+  color: #555;
+}
+.btn-blue{
+  background-color: #517d99;
+}
+.btn-blue:hover{
+  background-color: #fff;
+  color: #517d99;
+  border: 1px solid #517d99;
+}
+
