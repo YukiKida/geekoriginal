@@ -4,6 +4,7 @@
   <% if user_signed_in? %>
 
     <div class="my-page">
+      <%= image_tag current_user.image_url , class: 'image' , width: '30%' , height: '30%' if current_user.image %>
       <h3>HELLO! <%= current_user.name %> さん</h3>
       <p class="pt-20"><%= link_to "マイページを編集する", user_path(current_user.id) , class: 'btn' %></p>
     </div>

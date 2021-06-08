@@ -139,15 +139,35 @@ header li {
   margin: 0 auto;
   padding: 50px 50px 50px 75px;
 }
+.step-item--title{
+  font-size: 48px;
+  text-align: right;
+  margin-bottom: 30px;
+}
+.step-item--subtitle{
+  font-size: 1.3rem;
+  color: #517D99;
+  text-align: right;
+  position: relative;
+  margin-bottom: 90px;
+}
+.step-item--subtitle:after{
+  position: absolute;
+  content: "";
+  bottom: -30px;
+  right: 0;
+  border-bottom: 2px solid #517D99;
+  width: 12em;
+  height: 3px;
+}
 .step02{
   padding: 100px 50px;
 }
 .step-item--description{
   position: relative;
-  font-size: 24px;
-  text-align: left;
-  line-height: 3.0em;
-  letter-spacing: 3px;
+  text-align: right;
+  line-height: 2;
+  margin-bottom: 50px;
 }
 // .step-item--description::before{
 //   position: absolute;
@@ -159,7 +179,4 @@ header li {
 //   width: 75px;
 //   border-top: 2px solid #517D99;
 // }
-.emphasis{
-  font-size: 44px;
-  background:linear-gradient(transparent 60%, #DFEFED 60%);
-}
+

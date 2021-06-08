@@ -49,11 +49,11 @@
               <%= image_tag 'step01.png' , :size => '273x400' %>
             </div>
             <div class="step-item--box--inner">
-              <h4>STEP.01</h4>
-              <h4>まずは登録しよう</h4>
+              <h4 class="step-item--title">STEP.01</h4>
+              <h4 class="step-item--subtitle">まずは登録しよう</h4>
               <p class="step-item--description">
-                自分の<span class="emphasis">ユーザ名</span>・<br>
-                <span class="emphasis">学びたい言語</span>・<span class="emphasis">話したい言語</span>を<br>
+                自分のユーザ名<br>
+                学びたい言語・話したい言語を<br>
                 登録しましょう
               </p>
             </div>
@@ -65,7 +65,7 @@
         <div class="step-item">
           <h4 class="step-item--circle">02</h4>
           <h4 class="step-item--bar">|</h4>
-          <h4 class="step-item--subtitle">次はマッチングしよう</h4>
+          <h4 class="step-item-subtitle">次はマッチングしよう</h4>
           <div class="step-item--box step02">
             <div class="step-item--box--inner">
               <%= image_tag 'step02.png' , :size => '369x198' %>
@@ -105,7 +105,7 @@
 
     </section>
 
-    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete , class: 'btn' %>
 
 
   </body>
