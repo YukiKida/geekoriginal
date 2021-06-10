@@ -63,6 +63,28 @@ header li {
   border: 1px solid #517D99;
 }
 
+.heading-title{
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
+  background-color: #6AC1B7;
+  font-size: 36px;
+  font-weight: 100;
+  margin-top: 75px;
+  padding: 10px;
+}
+
+.heading-title:before{
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 2px solid #517D99;
+}
+
 .top-image{
   height: 100vh;
   width: 100%;
@@ -87,50 +109,34 @@ header li {
 }
 .top-text-title{
   padding: 30px;
-  font-size: 36px;
+  font-size: 48px;
 }
 .top-text-desc{
   padding: 30px;
-  font-size: 16px;
-  line-height: 2.5em;
+  font-size: 20px;
+  line-height: 2;
   text-align: left;
 }
 .step{
   text-align: center;
   width: 100%;
 }
-.step-title{
-  width: 250px;
-  margin: 0 auto;
-  position: relative;
-  color: #fff;
-  background-color: #6AC1B7;
-  font-size: 36px;
-  font-weight: 100;
-  margin-top: 75px;
-  padding: 10px;
-}
-.step-title:before{
-  position: absolute;
-  top: -12px;
-  left: -12px;
-  width: 100%;
-  height: 100%;
-  content: '';
-  border: 2px solid #517D99;
-}
+
 .step-contents{
   width: 100%;
 }
+
 .step-item{
   width: 100%;
   margin: 75px 0px;
 }
+
 .step-item--subtitle{
   font-size: 32px;
   font-weight: 100;
   color: #517D99;
 }
+
 .step-item--box{
   display: flex;
   justify-content: space-around;
@@ -139,19 +145,26 @@ header li {
   margin: 0 auto;
   padding: 50px 50px 50px 75px;
 }
+
+.step-item--image{
+  padding-top: 20px;
+}
+
 .step-item--title{
   font-size: 48px;
   text-align: right;
   margin-bottom: 30px;
 }
+
 .step-item--subtitle{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #517D99;
   text-align: right;
   position: relative;
   margin-bottom: 90px;
 }
-.step-item--subtitle:after{
+
+.odd:after{
   position: absolute;
   content: "";
   bottom: -30px;
@@ -160,14 +173,63 @@ header li {
   width: 12em;
   height: 3px;
 }
+
 .step02{
   padding: 100px 50px;
 }
+
 .step-item--description{
   position: relative;
   text-align: right;
   line-height: 2;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
+}
+
+.step-item--btn{
+  padding: 10px 80px;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.even:after{
+  position: absolute;
+  content: "";
+  bottom: -30px;
+  left: 0;
+  border-bottom: 2px solid #517D99;
+  width: 12em;
+  height: 3px;
+}
+/* ========================= language start ============================*/
+.language{
+  width: 100%;
+  padding: 50px 0 75px;
+}
+
+.language-item{
+  padding-top: 50px;
+  width: 24%;
+  display: inline-block;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.language-flag{
+  border: 2px solid #517D99;
+}
+
+
+/* ========================= footer start ============================*/
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #517D99;
+  text-align: center;
+  padding: 20px;
 }
 // .step-item--description::before{
 //   position: absolute;

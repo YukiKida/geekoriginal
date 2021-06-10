@@ -8,10 +8,21 @@
 
     <% if @messages.present? %>
       <% @messages.each do |m| %>
-        <div class="message-box">
-          <strong><%= m.content %></strong>
-          <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.email %>さん</a></strong></small>
-        </div>
+        <% if m.user_id == current_user.id %>
+          <div class="chat-box-current">
+            <div class="current-user">
+              <strong class="current-user"><%= m.content %></strong>
+              <small class="current-user"><a href="/users/<%= m.user_id %>" class="color-white"><%= m.user.name %>さん</a></small>
+            </div>
+          </div>
+        <% else %>
+          <div class="chat-box-visited">
+            <div class="visited-user">
+              <strong class="visited-user"><%= m.content %></strong>
+              <small class="visited-user"><a href="/users/<%= m.user_id %>" class="color-white" ><%= m.user.name %>さん</a></small>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% else %>
     <h3 class="text-center">メッセージはまだありません</h3>
@@ -23,7 +34,7 @@
     </div>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <br>
-    <%= f.submit "投稿する" , class: 'btn' %>
+    <%= f.submit "送信する" , class: 'btn' %>
   <% end %>
 
   <div class="return">

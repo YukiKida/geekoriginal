@@ -3,21 +3,53 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 #dm{
   text-align: center;
+  width: 100%;
 }
 #dm .inner{
   padding: 30px 0;
 }
 #dm .dm-title{
-  color: #6AC1B7;
+  color: #517D99;
   font-size: 48px;
   padding: 30px 0 20px;
 }
-#dm .message-box{
-  width: 60%;
-  border: 2px solid #517D99;
-  border-radius: 10px;
-  padding: 20px 10px;
-  margin: 0 auto;
+#dm .chat-box-current{
+  padding-right: 50px;
+}
+#dm .chat-box-visited{
+  padding-left: 50px;
+}
+.current-user {
+  color: #fff;
+  text-align: right;
+  background-color: #6ac1b7;
+  width: fit-content;
+  margin: 10px 0 0 auto;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.visited-user {
+  color: #fff;
+  background-color: #517D99;
+  text-align: left;
+  width: fit-content;
+  margin: 10px auto 0 0;
+  border-radius:30px;
+  -webkit-border-radius:30px;
+  -moz-border-radius:30px;
+  -ms-border-radius:30px;
+  -o-border-radius:30px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.color-white{
+  color: #fff;
+  font-size: 12px;
 }
 #dm .textbox{
   width: 60%;

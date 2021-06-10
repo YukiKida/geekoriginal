@@ -30,7 +30,7 @@
     <section class="top-image">
       <div class="top-image-circle"></div>
       <div class="top-text">
-        <h4 class="top-text-title">Break your language Barrier</h4>
+        <h4 class="top-text-title">Break Your Language Barrier</h4>
         <p class="top-text-desc">
           Tandemyは学びたい言語と<br />
           話せる言語との<br />
@@ -40,22 +40,23 @@
     </section>
 
     <section class="step">
-      <h2 class="step-title">学習の流れ</h2>
+      <h2 class="heading-title">学習の流れ</h2>
 
       <div class="step-contents">
         <div class="step-item">
           <div class="step-item--box">
             <div class="step-item--box--inner">
-              <%= image_tag 'step01.png' , :size => '273x400' %>
+              <%= image_tag 'step01.png' , :size => '273x400' , :class => 'step-item--image' %>
             </div>
             <div class="step-item--box--inner">
               <h4 class="step-item--title">STEP.01</h4>
-              <h4 class="step-item--subtitle">まずは登録しよう</h4>
+              <h4 class="step-item--subtitle odd">まずは登録しよう</h4>
               <p class="step-item--description">
                 自分のユーザ名<br>
                 学びたい言語・話したい言語を<br>
                 登録しましょう
               </p>
+              <a class="btn btn--blue step-item--btn" href="/users/sign_up">登録する</a>
             </div>
           </div>
         </div>
@@ -63,47 +64,68 @@
 
       <div class="step-contents">
         <div class="step-item">
-          <h4 class="step-item--circle">02</h4>
-          <h4 class="step-item--bar">|</h4>
-          <h4 class="step-item-subtitle">次はマッチングしよう</h4>
-          <div class="step-item--box step02">
+          <div class="step-item--box">
             <div class="step-item--box--inner">
-              <%= image_tag 'step02.png' , :size => '369x198' %>
+              <h4 class="step-item--title text-left">STEP.02</h4>
+              <h4 class="step-item--subtitle text-left even">次はマッチングしよう</h4>
+              <p class="step-item--description text-left">
+                学びたい言語と話したい言語を<br>
+                マッチングします<br>
+                ユーザの一覧表から気になる方を選択しましょう
+              </p>
             </div>
             <div class="step-item--box--inner">
+              <%= image_tag 'step02.png' , :size => '369x198' , :class => 'step-item--image' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-contents">
+        <div class="step-item">
+          <div class="step-item--box">
+            <div class="step-item--box--inner">
+              <%= image_tag 'step03.png' , :size => '266x353' , :class => 'step-item--image' %>
+            </div>
+            <div class="step-item--box--inner">
+              <h4 class="step-item--title">STEP.03</h4>
+              <h4 class="step-item--subtitle odd">チャットで教え合おう</h4>
               <p class="step-item--description">
-                学びたい言語と話したい言語を<br>
-                <span class="emphasis">マッチング</span>します<br>
-                ユーザの一覧表から<span class="emphasis">気になる方</span>を<br>
-                選択しましょう
+                それぞれ学習していて疑問に思ったことを<br>
+                その言語で質問してみましょう<br>
+                お互いに教え合うことで学習のモチベーション維持にも繋がります
               </p>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="step-contents">
-        <div class="step-item">
-          <h4 class="step-item--circle">03</h4>
-          <h4 class="step-item--bar">|</h4>
-          <h4 class="step-item--subtitle">チャットで教え合おう</h4>
-          <div class="step-item--box">
-            <div class="step-item--box--inner">
-              <%= image_tag 'step03.png' , :size => '266x353' %>
-            </div>
-            <div class="step-item--box--inner">
-              <p class="step-item--description">
-                それぞれ学習していて<span class="emphasis">疑問</span>に思ったことを<br>
-                <span class="emphasis">その言語</span>で<span class="emphasis">質問</span>してみましょう<br>
-                お互いに教え合うことで学習の<br>
-                <span class="emphasis">モチベーション維持</span>にもつながります
-              </p> 
-            </div>
-          </div>
-        </div>
+    <section class="language">
+      <h2 class="heading-title">使用言語</h2>
+
+      <div class="language-item">
+        <%= image_tag 'ntf_127.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
+        <h4 class="language-title">Chinese</h4>
+      </div>
+      <div class="language-item">
+        <%= image_tag 'ntf_131.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
+        <h4 class="language-title">Japanese</h4>
+      </div>
+      <div class="language-item">
+        <%= image_tag 'ntf_401.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
+        <h4 class="language-title">English</h4>
+      </div>
+      <div class="language-item">
+        <%= image_tag 'Flag_of_Spain.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
+        <h4 class="language-title">Spanish</h4>
       </div>
 
     </section>
+
+    <footer class="footer">
+      <small class="footer-content">© All rights reserved by yukikida.</small>
+    </footer>
 
     <%= button_to 'ログアウト', destroy_user_session_path, method: :delete , class: 'btn' %>
 
