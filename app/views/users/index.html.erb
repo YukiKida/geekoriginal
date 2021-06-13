@@ -5,7 +5,7 @@
 
     <div class="my-page">
       <%= image_tag current_user.image_url , class: 'table-image'  if current_user.image %>
-      <h3>HELLO! <%= current_user.name %> さん</h3>
+      <h3 class="current-user-name">HELLO! <%= current_user.name %> さん</h3>
       <p class="pt-20"><%= link_to "マイページを編集する", user_path(current_user.id) , class: 'btn' %></p>
     </div>
 
@@ -14,10 +14,14 @@
       <% @users.each do |u| %>
       <table class="user-table">
         <tr>
-          <th><%= image_tag u.image_url , class: 'table-image' if u.image %></th>
-          <th><%= u.name %>さん</th>
-          <th>学んでいる言語：<%= u.studyLanguage %></th>
-          <th>母国語：<%= u.nativeLanguage %></th>
+          <th>
+            <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
+            <%= u.name %>
+          </th>
+          <th>
+            SL：<%= u.studyLanguage %><br>
+            NL：<%= u.nativeLanguage %>
+          </th>
           <th><a href="/users/<%= u.id %>" class="start-btn bgleft"><span>始める</span></a></th>
         </tr>
       </table>

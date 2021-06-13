@@ -28,6 +28,9 @@ header h1 {
   display: flex;
   align-items: center;
 }
+.open-btn{
+  display: none;
+}
 header ul {
   display: flex;
 }
@@ -220,7 +223,6 @@ header li {
   border: 2px solid #517D99;
 }
 
-
 /* ========================= footer start ============================*/
 .footer{
   position: fixed;
@@ -231,14 +233,141 @@ header li {
   text-align: center;
   padding: 20px;
 }
-// .step-item--description::before{
-//   position: absolute;
-//   content: "";
-//   top: 120px;
-//   left: -85px;
-//   transform: rotate(-60deg);
-//   height: 50px;
-//   width: 75px;
-//   border-top: 2px solid #517D99;
-// }
+
+/*========================== レスポンシブ対応 ========================*/
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+  .top-text-title {
+    padding: 0;
+    font-size: 30px;
+  }
+  .top-text-desc{
+    padding: 20px 0 0 0;
+    font-size: 16px;
+  }
+  .top-image-circle{
+    width: 300px;
+    height: 300px;
+    right: 15%;
+  }
+  .step-item--box{
+    width: 85%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .step-item--box--inner{
+    width: 50%;
+    padding: 0px 20px;
+  }
+  .step-item--image{
+    width: 70%;
+    height: 70%;
+  }
+  .step-item--btn{
+    padding: 15px 110px;
+  }
+  .language{
+    padding: 25px 0 75px;
+  }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  header h1{
+    margin-left: 25px;
+    font-size: 36px;
+  }
+  .header-list{
+    display: none;
+  }
+  header li{
+    margin-right: 10px;
+  }
+  .open-btn{
+    display: block;
+    position: relative;
+    background: #517D99;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  .open-btn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    width: 45%;
+  }
+  .open-btn span:nth-of-type(1){
+    top: 15px;
+  }
+  .open-btn span:nth-of-type(2){
+    top: 23px;
+  }
+  .open-btn span:nth-of-type(3){
+    top: 31px;
+  }
+  .open-btn.active span:nth-of-type(1),
+  .open-btn.active span:nth-of-type(3){
+    top: 23px;
+  }
+  .btn{
+    padding: 10px 80px;
+  }
+  .top-text-title{
+    font-size: 20px;
+  }
+  .top-image{
+    height: 80vh;
+  }
+  .top-image-circle {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    right: 10%;
+  }
+  .heading-title{
+    margin: 0 auto;
+  }
+  .step-item--box {
+    display: block;
+    padding: 10px;
+  }
+  .step-item--box--inner{
+    width: 100%;
+    padding: 0;
+  }
+  .step-item--image{
+    width: 50%;
+    height: 50%;
+  }
+  .step-item--title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .step-item--subtitle {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 45px;
+  }
+  .step-item--description{
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .odd:after,
+  .even:after{
+    display: none;
+  }
+  .step-contents:nth-child(2) .step-item--box--inner{
+    flex-direction: column-reverse;
+  }
+  .br-sp{
+    display: none;
+  }
+}
 
