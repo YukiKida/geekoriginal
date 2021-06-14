@@ -40,10 +40,12 @@
       </div>
     </section>
 
-    <section class="step">
-      <h2 class="heading-title">学習の流れ</h2>
+    <div class="scrolldown2"><span>Scroll</span></div>
 
-      <div class="step-contents">
+    <section class="step">
+      <h2 class="heading-title scrollanime slide-right">学習の流れ</h2>
+
+      <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
             <div class="step-item--box--inner">
@@ -63,7 +65,7 @@
         </div>
       </div>
 
-      <div class="step-contents">
+      <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
             <div class="step-item--box--inner">
@@ -83,7 +85,7 @@
         </div>
       </div>
 
-      <div class="step-contents">
+      <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
             <div class="step-item--box--inner">
@@ -105,7 +107,7 @@
     </section>
 
     <section class="language">
-      <h2 class="heading-title">使用言語</h2>
+      <h2 class="heading-title scrollanime slide-left">使用言語</h2>
 
       <div class="language-item">
         <%= image_tag 'ntf_127.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
@@ -130,11 +132,30 @@
       <small class="footer-content">© All rights reserved by yukikida.</small>
     </footer>
 
-    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete , class: 'btn' %>
 
     <script>
-      $("open-btn").click(function(){
-        $(this).toggleClass('active');
+      $(function () {
+        $(window).scroll(function () {
+          const wHeight = $(window).height();
+          const scrollAmount = $(window).scrollTop();
+          $('.scrollanime').each(function () {
+            const targetPosition = $(this).offset().top;
+            if(scrollAmount > targetPosition - wHeight + 60){
+              $(this).addClass("fadeInDown");
+            }
+          });
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>
+      bubbly({
+        colorStart: "#fff",
+        colorStop: "#fff",
+        blur: 1,
+        compose: "source-over",
+        bubbleFunc: () => `hsla(173, 41.2%, 58.6%, 0.2)`
       });
     </script>
 

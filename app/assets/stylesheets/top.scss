@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
 header {
-  background-color: #fff;
+  background-color: transparent;
   width: 100%;
   height: 80px;
   font-weight: bold;
@@ -71,11 +71,12 @@ header li {
   margin: 0 auto;
   position: relative;
   color: #fff;
-  background-color: #6AC1B7;
+  background-color: #517D99;
   font-size: 36px;
   font-weight: 100;
   margin-top: 75px;
   padding: 10px;
+  text-align: center;
 }
 
 .heading-title:before{
@@ -100,7 +101,7 @@ header li {
   border-radius: 67% 33% 29% 71% / 58% 75% 25% 42% ;
   top: 20%;
   right: 25%;
-  background-color: #6AC1B7;
+  background-color: #517D99;
 }
 .top-text{
   position: absolute;
@@ -119,6 +120,55 @@ header li {
   font-size: 20px;
   line-height: 2;
   text-align: left;
+}
+/* スクロールダウン */
+.scrolldown2{
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+}
+.scrolldown2 span{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: #517D99;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+.scrolldown2:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #517D99;
+  animation: 
+      circlemove 1.6s ease-in-out infinite,
+      circlemovehide 1.6s ease-out infinite;
+}
+@keyframes circlemove{
+  0%{bottom: 45px;}
+  100%{bottom: -5px;}
+}
+@keyframes circlemovehide{
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  80%{opacity: 0.9;}
+  100%{opacity: 0;}
+}
+.scrolldown2:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 50px;
+  background: #517D99;
 }
 .step{
   text-align: center;
@@ -228,7 +278,7 @@ header li {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: transparent;
   color: #517D99;
   text-align: center;
   padding: 20px;
@@ -370,4 +420,29 @@ header li {
     display: none;
   }
 }
+
+/*1. フェードインアニメーションの指定 */
+.scrollanime {opacity: 0;}
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*2.上下の動きを指定 */
+.downup {transform: translateY(100px);}
+
+/*3.左右の動きを指定 */
+.slide-right {transform: translateX(200px);}
+.slide-left {transform: translateX(-200px);}
+
 
