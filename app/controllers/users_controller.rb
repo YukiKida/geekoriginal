@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, :only => [:show,:index]
   def index
     @users=User.where(studyLanguage: current_user.nativeLanguage)
+    @notifications = current_user.passive_notifications
   end
 
   def show

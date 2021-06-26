@@ -110,16 +110,80 @@ a{
 /* ============================== 一覧表 ==============================*/
 #users{
   text-align: center;
-  height: 100vh;
   width: 100%;
 }
-.chart-title{
-  padding: 60px 0px 20px;
-  color: #517d99;
+.users-header{
+  width: 100%;
+  background: #517d99;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.users-header-title{
+  width: 40%;
+}
+.users-header-content{
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-title-chart{
+  color: #fff;
   font-size: 28px;
+  text-align: left;
+  padding-left: 40px;
+}
+.logout{
+  padding-right: 40px;
+}
+.logout-btn{
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  background:#fff;
+  color:#517d99;
+  padding: 10px 40px 10px 30px;
+  border-radius:25px;
+  text-align: center;
+  outline: none;
+  transition: ease .2s;
+}
+.logout-btn:hover{
+  background-color: #ddd;
+}
+.logout-btn::after{
+  content: '';
+  position: absolute;
+  top:42%;
+  right: 13px;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #517d99;
+  border-right: 2px solid #517d99;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+.logout-btn:hover::after{
+  right: 11px;
+}
+.notification{
+  padding-right: 40px;
+}
+.notification-bell{
+  color: #fff;
+  font-size: 28px;
+  transition: all 0.5s;
+}
+.notification-bell:hover{
+  color: #ddd;
 }
 .my-page{
   padding: 30px 0;
+}
+.users-content{
+  width: 100%;
 }
 .user-table{
   border-collapse: collapse;
@@ -139,8 +203,8 @@ a{
   padding: 35px 0;
 }
 .table-image{
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border: 2px solid #517d99;
   object-fit: cover;
@@ -183,9 +247,6 @@ a{
 .new-chat{
   padding: 50px 0;
 }
-.logout{
-  padding: 50px 0;
-}
 .inner{
   padding: 30px 0;
 }
@@ -194,11 +255,11 @@ a{
 /* ==============================詳細ページ======================================= */
 .detail-title,
 #edit .title{
-  padding: 20px;
+  padding: 20px 0px 20px 40px;
   text-align: left;
   color: #fff;
   background-color: #517d99;
-  font-size: 32px;
+  font-size: 28px;
 }
 .user-profile{
   background: #517d99;
@@ -317,9 +378,11 @@ a{
     padding: 10px;
   } 
   /* 一覧ページ */
+  #users{
+    width: 100%;
+  }
   .user-table th{
-    font-size: 12px;
-    width: 30%;
+    font-size: 24px;
   }
   /* 詳細ページ */
   .detail-title,

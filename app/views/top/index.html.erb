@@ -11,10 +11,11 @@
   </head>
 
   <body>
-
+    
+    <%# ヘッダー部分 %>
     <header>
-      <h1>Tandemy</h1>
-      <div class="header-list">
+      <h1 class="header-title">Tandemy</h1>
+      <nav class="header-list">
         <ul>
           <li>
             <a class="btn btn--green" href="/users">ログイン</a>
@@ -23,11 +24,10 @@
             <a class="btn btn--blue" href="/users/sign_up">新規登録</a>
           </li>
         </ul>
-      </div>
-      <div class="open-btn"><span></span><span></span><span></span></div>  
+      </nav> 
     </header>
 
-
+    <%# トップページ部分 %>
     <section class="top-image">
       <div class="top-image-circle"></div>
       <div class="top-text">
@@ -40,11 +40,26 @@
       </div>
     </section>
 
+    <%# スマートフォンのサイズだけ表示するボタン %>
+    <section class="smartphone-btn">
+      <ul>
+        <li class="smartphone-btn-list">
+            <a class="btn btn--green" href="/users">ログイン</a>
+        </li>
+        <li class="smartphone-btn-list">
+            <a class="btn btn--blue" href="/users/sign_up">新規登録</a>
+        </li>
+      </ul>
+    </section>
+
+    <%# スクロールを促すアニメーション %>
     <div class="scrolldown2"><span>Scroll</span></div>
 
+    <%# 学習のステップ部分 %>
     <section class="step">
       <h2 class="heading-title scrollanime slide-right">学習の流れ</h2>
 
+      <%# STEP01部分 %>
       <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
@@ -65,6 +80,7 @@
         </div>
       </div>
 
+      <%# STEP02部分 %>
       <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
@@ -85,6 +101,7 @@
         </div>
       </div>
 
+      <%# STEP03部分 %>
       <div class="step-contents scrollanime downup">
         <div class="step-item">
           <div class="step-item--box">
@@ -106,6 +123,7 @@
       </div>
     </section>
 
+    <%# 使用言語の部分 %>
     <section class="language">
       <h2 class="heading-title scrollanime slide-left">使用言語</h2>
 
@@ -125,14 +143,46 @@
         <%= image_tag 'Flag_of_Spain.svg' , width: '40%' , height: '40%' , class: 'language-flag' %>
         <h4 class="language-title">Spanish</h4>
       </div>
-
     </section>
 
+    <%# 背景部分 %>
+    <section class="background">
+      <h2 class="heading-title scrollanime slide-left">作成した経緯</h2>
+      <div class="background-contents">
+        <div class="background-item">
+          <h5 class="background-item--number">01</h5>
+          <p class="background-item--desc">言語学習をしていても中々使う機会がない</p>
+          <p class="background-item-icon"><i class="fas fa-arrow-circle-down"></i></p>
+        </div>
+        <div class="background-item">
+          <h5 class="background-item--number">02</h5>
+          <p class="background-item--desc">気軽にチャット相談できる海外の友達を作りたい</p>
+          <p class="background-item-icon"><i class="fas fa-arrow-circle-down"></i></p>
+        </div>
+        <div class="background-item">
+          <h5 class="background-item--number">03</h5>
+          <p class="background-item--desc">お互いの言語を教え合うことで双方にメリットがある形にしよう</p>
+          <p class="background-item-icon"><i class="fas fa-arrow-circle-down"></i></p>
+        </div>
+        <div class="background-item">
+          <h5 class="background-item--number">GOAL</h5>
+          <p class="background-item--desc">それがTandemy</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-top-section">
+      <div id="page-top"><a href="#"></a></div>
+    </section>
+
+
+    <%# フッター部分 %>
     <footer class="footer">
-      <small class="footer-content">© All rights reserved by yukikida.</small>
+      <small class="footer-content">© All rights reserved by KidaYuki.</small>
     </footer>
 
 
+    <%# スクロールイベントのjQuery部分 %>
     <script>
       $(function () {
         $(window).scroll(function () {
@@ -148,6 +198,7 @@
       });
     </script>
 
+    <%# 背景アニメーションのjQuery部分 %>
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
     <script>
       bubbly({
@@ -156,6 +207,15 @@
         blur: 1,
         compose: "source-over",
         bubbleFunc: () => `hsla(173, 41.2%, 58.6%, 0.2)`
+      });
+    </script>
+
+    <script>
+      $('#page-top').click(function(){
+        $('body,html').animate({
+          scrollTop: 0
+        },700);
+        return false;
       });
     </script>
 

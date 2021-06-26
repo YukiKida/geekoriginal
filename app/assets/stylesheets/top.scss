@@ -19,17 +19,14 @@ header a {
   color: white; 
   text-decoration: none; 
 }
-header h1 {
+.header-title {
   color: #517D99;
-  margin-left: 40px;
+  margin-left: 30px;
   font-family: 'Delius', cursive;
 }
 .header-list {
   display: flex;
   align-items: center;
-}
-.open-btn{
-  display: none;
 }
 header ul {
   display: flex;
@@ -38,6 +35,9 @@ header li {
   list-style: none;
   margin-right: 40px;
   color: white;
+}
+.smartphone-btn{
+  visibility: hidden;
 }
 .btn{
   padding: 10px 40px;
@@ -98,10 +98,34 @@ header li {
   position: absolute;
   width: 400px;
   height: 400px;
-  border-radius: 67% 33% 29% 71% / 58% 75% 25% 42% ;
   top: 20%;
   right: 25%;
   background-color: #517D99;
+  animation: fluidrotate 30s ease 0s infinite;
+}
+
+@keyframes fluidrotate{
+  0%,100%{
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+  14%{
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+  28%{
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+  42%{
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+  56%{
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+  70%{
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+  84%{
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
 }
 .top-text{
   position: absolute;
@@ -262,7 +286,7 @@ header li {
 }
 
 .language-item{
-  padding-top: 50px;
+  padding-top: 100px;
   width: 24%;
   display: inline-block;
   justify-content: space-between;
@@ -272,8 +296,68 @@ header li {
 .language-flag{
   border: 2px solid #517D99;
 }
-
-/* ========================= footer start ============================*/
+/* ========================= background start ============================*/
+.background{
+  text-align: center;
+}
+.background-contents{
+  padding-top: 30px;
+}
+.background-item{
+  width: 60%;
+  margin: 50px auto 0px;
+  padding: 0px 10px 20px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 0 40px rgba(128, 128, 128, 0.1);
+  transition: all 0.4s; 
+}
+.background-item:hover{
+  box-shadow: 0 2px 15px rgba(0,0,0,0.4), 0 0 50px rgba(128, 128, 128, 0.1);
+}
+.background-item--number{
+  font-size: 36px;
+  position: relative;
+  padding: 30px 0;
+  margin-bottom: 35px;
+  color: #555;
+}
+.background-item--number:before{
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-top: 3px solid #6AC1B7;
+  transform: rotate(-60deg);
+}
+.background-item--desc{
+  font-size: 24px;
+  color: #555;
+}
+.background-item-icon{
+  margin-top: 10px;
+  font-size: 60px;
+  color: #517D99;
+}
+/* ========================= page-top-section start ======================*/
+.page-top-section{
+  padding: 100px 0 50px;
+  text-align: center;
+}
+#page-top{
+  margin: 0 auto 100px auto;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  border-color: #999 #999 transparent transparent;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+/* ========================= footer start ================================*/
 .footer{
   position: fixed;
   bottom: 0;
@@ -281,7 +365,7 @@ header li {
   background-color: transparent;
   color: #517D99;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 /*========================== レスポンシブ対応 ========================*/
@@ -326,53 +410,17 @@ header li {
     margin-left: 25px;
     font-size: 36px;
   }
-  .header-list{
-    display: none;
-  }
   header li{
     margin-right: 10px;
   }
-  .open-btn{
-    display: block;
-    position: relative;
-    background: #517D99;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    margin-right: 20px;
-  }
-  .open-btn span{
-    display: inline-block;
-    transition: all .4s;
-    position: absolute;
-    left: 14px;
-    height: 3px;
-    border-radius: 2px;
-    background: #fff;
-    width: 45%;
-  }
-  .open-btn span:nth-of-type(1){
-    top: 15px;
-  }
-  .open-btn span:nth-of-type(2){
-    top: 23px;
-  }
-  .open-btn span:nth-of-type(3){
-    top: 31px;
-  }
-  .open-btn.active span:nth-of-type(1),
-  .open-btn.active span:nth-of-type(3){
-    top: 23px;
-  }
-  .btn{
-    padding: 10px 80px;
+  .header-list{
+    visibility: hidden;
   }
   .top-text-title{
     font-size: 20px;
   }
   .top-image{
-    height: 80vh;
+    height: 60vh;
   }
   .top-image-circle {
     width: 200px;
@@ -380,8 +428,22 @@ header li {
     top: 30%;
     right: 10%;
   }
+  .btn{
+    padding: 10px 80px;
+  }
+  .smartphone-btn{
+    visibility: visible;
+    width: 80%;
+    height: 60vh;
+  }
+  .smartphone-btn-list{
+    list-style: none;
+    margin-bottom: 50px;
+    padding-left: 30px;
+  }
   .heading-title{
     margin: 0 auto;
+    font-size: 24px;
   }
   .step-item--box {
     display: block;

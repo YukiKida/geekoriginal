@@ -1,8 +1,22 @@
 <div id="users">
 
-  <h2 class="chart-title">ユーザ一覧</h2>
   <% if user_signed_in? %>
 
+    <div class="users-header">
+      <div class="users-header-title">
+        <h2 class="header-title-chart">ユーザ一覧</h2>
+      </div>
+      <div class="users-header-content">
+        <div class="logout">
+          <%= link_to "ログアウト", destroy_user_session_path, :method => :delete , class: 'logout-btn' %>
+        </div>
+        <div class="notification">
+          <a href="/notifications/index" class="notification-bell"><i class="fas fa-bell"></i></a>
+        </div>
+      </div>
+    </div>
+
+    
     <div class="my-page">
       <%= image_tag current_user.image_url , class: 'table-image'  if current_user.image %>
       <h3 class="current-user-name">HELLO! <%= current_user.name %> さん</h3>
@@ -10,25 +24,23 @@
     </div>
 
 
-    <div>
+    <div class="users-content">
       <% @users.each do |u| %>
       <table class="user-table">
         <tr>
           <th>
             <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
+            <%= u.email %>
             <%= u.name %>
           </th>
           <th>
             SL：<%= u.studyLanguage %><br>
             NL：<%= u.nativeLanguage %>
           </th>
-          <th><a href="/users/<%= u.id %>" class="start-btn bgleft"><span>始める</span></a></th>
+          <th><a href="/users/<%= u.id %>" class="start-btn bgleft"><span>気になる</span></a></th>
         </tr>
       </table>
       <% end %>
-      <div class="logout">
-        <%= link_to "ログアウト", destroy_user_session_path, :method => :delete, class: "btn" %>
-      </div>
     </div>
 
 
