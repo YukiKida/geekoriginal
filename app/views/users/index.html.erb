@@ -1,7 +1,5 @@
-<div id="users">
-
-  <% if user_signed_in? %>
-
+<% if user_signed_in? %>
+  <div id="users">
     <div class="users-header">
       <div class="users-header-title">
         <h2 class="header-title-chart">ユーザ一覧</h2>
@@ -31,7 +29,7 @@
           <th>
             <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
             <%= u.email %>
-            <%= u.name %>
+            <p class="user-table-name"><%= u.name %></p>
           </th>
           <th>
             SL：<%= u.studyLanguage %><br>
@@ -51,5 +49,5 @@
     <div class="inner">
       <%= link_to "ログインする", new_user_session_path , class:'btn' %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

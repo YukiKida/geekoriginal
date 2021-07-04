@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 
   get 'top/index' => 'top#index'
+  get 'top/index_en' => 'top#index_en'
   get 'top/login' => 'top#login'
   get 'top/new' => 'top#new'
 

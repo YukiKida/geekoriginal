@@ -1,4 +1,16 @@
 <% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+
+<%# ヘッダー部分 %>
+<div class="notification-header">
+    <div class="notification-header-title">
+        <h2 class="notification-title-chart">通知一覧</h2>
+    </div>
+    <div class="logout">
+        <%= link_to "ログアウト", destroy_user_session_path, :method => :delete , class: 'logout-btn' %>
+    </div>
+</div>
+
+<%# 通知一覧部分 %>
 <% if notifications.exists? %>
     <%= render notifications %>
 <% else %>

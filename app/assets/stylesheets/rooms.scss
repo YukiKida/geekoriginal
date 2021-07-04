@@ -3,16 +3,24 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 #dm{
   text-align: center;
-  width: 800px;
-  margin: 0 auto;
+  width: 100%;
+}
+.dm-header{
+  width: 100%;
+  background: #517d99;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-title-chart{
+  color: #fff;
+  font-size: 28px;
+  text-align: left;
+  padding-left: 40px;
 }
 #dm .inner{
   padding: 30px 0;
-}
-#dm .dm-title{
-  color: #517D99;
-  font-size: 48px;
-  padding: 30px 0 20px;
 }
 #dm .chat-box-current{
   padding-right: 50px;

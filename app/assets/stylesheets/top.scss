@@ -341,6 +341,9 @@ header li {
   font-size: 60px;
   color: #517D99;
 }
+.br-sp{
+  display: none;
+}
 /* ========================= page-top-section start ======================*/
 .page-top-section{
   padding: 100px 0 50px;
@@ -433,7 +436,7 @@ header li {
   }
   .smartphone-btn{
     visibility: visible;
-    width: 80%;
+    width: 100%;
     height: 60vh;
   }
   .smartphone-btn-list{
@@ -479,7 +482,13 @@ header li {
     flex-direction: column-reverse;
   }
   .br-sp{
-    display: none;
+    display: block;
+  }
+  .background-item{
+    padding: 0px 20px 20px;
+  }
+  .background-item--desc{
+    font-size: 16px;
   }
 }
 
