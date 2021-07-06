@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   root "top#index"
   resources :messages, only: [:create]
   resources :rooms, only: [:create,:show,:index]
+  resources :notifications, only: [:index,:update]
 
 end

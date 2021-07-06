@@ -1,12 +1,14 @@
-<% visitor = notification.visitor %>
-<% visited = notification.visited %>
+<% if notification.checked == false %>
+    <% visitor = notification.visitor %>
+    <% visited = notification.visited %>
 
-
-<div class="notification-chart">
- <%= link_to user_path(visitor) do %>
-     <p class="notification-text"><span class="emphasis"><%= visitor.name %></span>さんから</p>
- <% end %>
- <% if notification.action=='dm' %>
-    <p class="notification-text">メッセージを受け取りました</p>
- <% end %>
-</div>
+    <div class="notification-chart">
+    <%= link_to user_path(visitor) do %>
+        <p class="notification-text"><span class="emphasis"><%= visitor.name %></span>さんから</p>
+    <% end %>
+    <% if notification.action=='dm' %>
+        <p class="notification-text">メッセージを受け取りました</p>
+    <% end %>
+    <%= link_to '既読にする' , notifications_index_path(notification.id), method: :post %>
+    </div>
+<% end %>
