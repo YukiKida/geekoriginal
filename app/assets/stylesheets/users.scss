@@ -14,7 +14,7 @@
   border-radius: 25px;
   background-color: #6AC1B7;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #6AC1B7;
   font-weight: bold;
   transition: all .5s;
   cursor: pointer;
@@ -179,6 +179,9 @@
 .my-page{
   padding: 30px 0;
 }
+.current-user-name{
+  color: #333;
+}
 .users-content{
   width: 100%;
 }
@@ -198,6 +201,33 @@
   text-align: center;
   width: 20%;
   padding: 35px 0;
+}
+.user-table-name{
+  color: #555;
+}
+
+/* マッチングした相手の言語 */
+.matching-language{
+  padding-top: 30px;
+}
+.matching-language-title{
+  color: #517d99;
+  font-size: 28px;
+}
+.matching-language-contents{
+  display: flex;
+  justify-content: center;
+}
+.matching-language-item{
+  margin: 50px;
+  color: #555;
+}
+.matching-language-flag{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  object-fit: cover;
 }
 .table-image{
   width: 100px;
@@ -259,57 +289,84 @@
   font-size: 28px;
 }
 .user-profile{
-  background: #517d99;
+  background: #fff;
   width: 300px;
-  margin: 50px auto;
+  height: calc(100vh - 120px);
+  padding: 20px;
+  margin: 0px auto;
+}
+.user-fadeup{
+  animation-name: fadeUpAnime;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes fadeUpAnime{
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .profile-image{
   position: relative;
 }
 .profile-image .image{
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.profile-image:after{
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  border-style: solid;
-  border-width: 35px 0 0 300px;
-  border-color: transparent transparent transparent #517d99;
-}
+
 .profile-name,
 .profile-studylanguage,
 .profile-nativelanguage,
 .profile-desc{
-  color: #fff;
+  color: #517d99;
 }
 .profile-name{
-  padding: .5rem 1.6rem .2rem;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   letter-spacing: .1rem;
+  padding: 20px 0px 0px 20px;
+}
+.profile-studylanguage{
+  padding-top: 40px;
 }
 .profile-studylanguage,
 .profile-nativelanguage{
-  padding: 0 1.6rem 0;
-  font-size: .8rem;
+  padding-left: 20px;
+  font-size: 1rem;
   letter-spacing: .1rem;
-  opacity: .7;
+  opacity: .8;
 }
 .profile-desc{
-  padding: 1.6rem;
-  line-height: 1.6rem;
+  padding: 40px 0px 0px 20px;
+  font-size: 1.2rem;
+
 }
-.text-center{
-  text-align: center;
+.detail-contents{
+  width: 100%;
+  height: calc(100vh - 80.5px);
+  display: flex;
+  justify-content: space-between;
+  background-color: #517d99;
+}
+.detail-item{
+  width: 50%;
+  vertical-align: middle;
 }
 .chat{
-  width: 200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 50px 0;
+  line-height: 1.5rem;
 }
 .return{
+  width: 100%;
   padding: 50px 0;
 }
 
@@ -396,7 +453,6 @@
   }
   .user-table-name{
     font-size: 12px;
-    color: #555;
   }
   /* ====================================== 詳細ページ ===================================== */
   .detail-title,

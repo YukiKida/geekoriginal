@@ -14,11 +14,46 @@
       </div>
     </div>
 
-    
+    <%# マイページ %>
     <div class="my-page">
       <%= image_tag current_user.image_url , class: 'table-image'  if current_user.image %>
       <h3 class="current-user-name">HELLO! <%= current_user.name %> さん</h3>
       <p class="pt-20"><%= link_to "マイページを編集する", user_path(current_user.id) , class: 'btn' %></p>
+    </div>
+
+
+    <%# マッチング言語の表示 %>
+    <div class="matching-language">
+      <h2 class="matching-language-title">マッチングした相手の言語</h2>
+      <div class="matching-language-contents">
+        <div class="matching-language-item">
+          <h3 class="ml-item-title">学びたい言語</h3>
+          <h3 class="matching-partner-sl"><%= current_user.nativeLanguage %></h3>
+          <% if current_user.nativeLanguage == "Japanese" %>
+            <%= image_tag 'ntf_131.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% elsif current_user.nativeLanguage == "English" %>
+            <%= image_tag 'ntf_401.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% elsif current_user.nativeLanguage == "Chinese" %>
+            <%= image_tag 'ntf_127.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% else %>
+            <%= image_tag 'Flag_of_Spain.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% end %>
+        </div>
+        <div class="matching-language-item">
+          <h3 class="ml-item-title">話せる言語</h3>
+          <h3 class="matching-partner-nl"><%= current_user.studyLanguage %></h3>
+          <% if current_user.studyLanguage == "Japanese" %>
+            <%= image_tag 'ntf_131.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% elsif current_user.studyLanguage == "English" %>
+            <%= image_tag 'ntf_401.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% elsif current_user.studyLanguage == "Chinese" %>
+            <%= image_tag 'ntf_127.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% else %>
+            <%= image_tag 'Flag_of_Spain.svg' , width: '40%' , height: '40%' , class: 'matching-language-flag' %>
+          <% end %>
+        </div>
+      </div>
+    
     </div>
 
 
@@ -28,12 +63,11 @@
         <tr>
           <th>
             <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
-            <%= u.email %>
             <p class="user-table-name"><%= u.name %></p>
           </th>
           <th>
-            SL：<%= u.studyLanguage %><br>
-            NL：<%= u.nativeLanguage %>
+            プロフィール文<br>
+            ：<%= u.introduction %>
           </th>
           <th><a href="/users/<%= u.id %>" class="start-btn bgleft"><span>気になる</span></a></th>
         </tr>

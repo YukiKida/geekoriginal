@@ -348,10 +348,20 @@ header li {
 .language-switching{
   text-align: center;
   padding-top: 100px;
+  transition: all 0.5s;
 }
 .language-switching-link{
   font-size: 28px;
   color: #517D99;
+}
+.language-switching:hover{
+  opacity: 0.8;
+}
+.english-ver{
+  font-size: 24px;
+}
+.english-ver-title{
+  font-size: 28px;
 }
 /* ========================= page-top-section start ======================*/
 .page-top-section{
