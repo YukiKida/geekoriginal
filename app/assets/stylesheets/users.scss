@@ -189,22 +189,8 @@
   justify-content: space-between;
   align-items: start;
 }
-.user-table{
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 800px;
-  margin: 0 auto;
-}
-.user-table tr{
-  border-bottom: 1px solid #eee;
-}
-.user-table tr:hover{
-  background-color: #DFEFED;
-}
-.user-table th{
-  text-align: center;
-  width: 20%;
-  padding: 35px 0;
+.users-item-intro-detail{
+  color: #555;
 }
 .pc-delete{
   display: none;
@@ -212,8 +198,7 @@
 .user-table-name{
   color: #555;
 }
-
-/* マッチングした相手の言語 */
+/* =============================マッチングした相手の言語======================== */
 .matching-language{
   padding-top: 30px;
 }
@@ -420,9 +405,20 @@
   .current-user-name{
     padding-top: 10px;
   }
+  .users-item{
+    width: 30%;
+  }
+  .users-item-intro-title{
+    text-align: left;
+    font-size: 14px;
+  }
+  .users-item-intro-detail{
+    text-align: left;
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+	/* ============================480px以下に適用されるCSS（スマホ用）===================== */
   /* ログインページ */
   .login{
     padding: 25px 0 50px;
@@ -462,9 +458,20 @@
   .users-content{
     flex-direction: column;
   }
-  .user-table th{
-    font-size: 18px;
+  .users-item{
+    width: 100%;
+    padding-bottom: 10px;
+    margin-top: 10px;
   }
+  .users-item-intro-title{
+    text-align: center;
+    font-size: 14px;
+  }
+  .users-item-intro-detail{
+    text-align: center;
+    font-size: 12px;
+  }
+  
   .user-table-name{
     font-size: 12px;
   }
@@ -483,9 +490,31 @@
   #edit .title{
     font-size: 28px;
   }
-  /* 編集ページ */
+  .detail-contents{
+    flex-direction: column;
+    height: auto;
+  }
+  .detail-item{
+    width: 100%;
+  }
+  .user-profile{
+    background-color: transparent;
+  }
+  .profile-name,
+  .profile-studylanguage,
+  .profile-nativelanguage,
+  .profile-desc{
+    color: #fff;
+  }
+  .detail-item-btn{
+    padding-left: 80px;
+  }
+
+
+  /* ===================================== 編集ページ ======================================= */
   .edit-form{
     width: 300px;
   }
+
 
 }

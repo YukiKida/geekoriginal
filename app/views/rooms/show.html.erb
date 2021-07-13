@@ -11,9 +11,9 @@
     </div>
   </div>
 
-  <h4>参加者</h4>
+  <h4 class="participant-title">参加者</h4>
   <% @entries.each do |e| %>
-    <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
+    <h5 class="participant-member"><strong><a href="/users/<%= e.user.id %>"><%= e.user.name%>さん</a></strong></h5>
   <% end %>
 
     <% if @messages.present? %>

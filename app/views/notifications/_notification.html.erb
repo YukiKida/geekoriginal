@@ -9,6 +9,8 @@
     <% if notification.action=='dm' %>
         <p class="notification-text">メッセージを受け取りました</p>
     <% end %>
-    <%= link_to '既読にする' , notifications_index_path(notification.id), method: :post %>
+    <div class="already-read-btn">
+        <%= link_to '既読にする' , notifications_index_path(notification.id), method: :post , class: 'btn' %>
+    </div>
     </div>
 <% end %>

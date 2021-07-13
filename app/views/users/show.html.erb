@@ -19,7 +19,9 @@
     <%# 詳細ページの右部分 %>
     <div class="detail-item">
       <% if current_user.id == @user.id %>
-      <p class="text-center pt-20"><%= link_to "編集する", edit_user_registration_path , class: 'btn' %></p>
+        <div class="detail-item-btn">
+          <p class="text-center pt-20"><%= link_to "編集する", edit_user_registration_path , class: 'btn' %></p>
+        </div>
       <% end %>
 
       <% if @user.id == current_user.id %>
@@ -27,7 +29,9 @@
       <% else %>
         <% if @isRoom == true %>
           <div class="chat">
-            <p><a href="/rooms/<%= @roomId %>" class="btn">チャットへ</a></p>
+            <div class="detail-item-btn">
+              <p><a href="/rooms/<%= @roomId %>" class="btn">チャットへ</a></p>
+            </div>
           </div>
         <% else %>
           <%= form_for @room do |f| %>
@@ -35,7 +39,9 @@
               <%= e.hidden_field :user_id, :value=> @user.id %>
             <% end %>
             <div class="chat">
-              <%= f.submit "チャットを始める" , class: 'btn' %>
+              <div class="detail-item-btn">
+                <%= f.submit "チャットを始める" , class: 'btn' %>
+              </div>
             </div>
           <% end %>
         <% end %>
@@ -43,7 +49,9 @@
 
       <%# 一覧ページへ戻る %>
       <div class="return">
-        <%= link_to "ユーザ一覧に戻る", users_path , class: 'btn' %>
+        <div class="detail-item-btn">
+          <%= link_to "ユーザ一覧に戻る", users_path , class: 'btn' %>
+        </div>
       </div>
     </div>
   </div>
