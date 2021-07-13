@@ -57,23 +57,23 @@
     </div>
 
 
-    <div class="users-content">
-      <% @users.each do |u| %>
-      <table class="user-table">
-        <tr>
-          <th>
-            <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
-            <p class="user-table-name"><%= u.name %></p>
-          </th>
-          <th>
-            プロフィール文<br>
-            ：<%= u.introduction %>
-          </th>
-          <th><a href="/users/<%= u.id %>" class="start-btn bgleft"><span>気になる</span></a></th>
-        </tr>
-      </table>
-      <% end %>
-    </div>
+    <% @users.each do |u| %>
+      <div class="users-content">
+        <div class="users-item">
+          <%= image_tag u.image_url , class: 'table-image' if u.image %><br>
+          <p class="user-table-name"><%= u.name %></p>
+        </div>
+
+        <div class="users-item">
+          <p>プロフィール文</p>
+          <p><%= u.introduction %></p>
+        </div>
+
+        <div class="users-item">
+          <a href="/users/<%= u.id %>" class="start-btn bgleft"><span>気になる</span></a>
+        </div>
+      </div>
+    <% end %>
 
 
   <% else %>
